@@ -1,21 +1,23 @@
-Download CaskaydiaCove Nerd Font Mono
-https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip
-
-winget install JanDeDobbeleer.OhMyPosh -s winget
-oh-my-posh init pwsh --config 'C:\repositorios\github\OhMyPosh\sysinfo.omp.json' | Invoke-Expression
-
+INSTALATION
+---------------------------------------------------------------------------------------------------------------
+https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip (CaskaydiaCove Nerd Font Mono)
 winget install --id Git.Git -e --source winget
-
 winget install --id GitHub.cli
-
+gh repo clone rlimaoc/OhMyPosh (escolher a pasta onde ficará o repositório de configuração)
+winget install JanDeDobbeleer.OhMyPosh -s winget
 Install-Module PSReadLine
-$PROFILE >>
+Install-Module z -AllowClobber
+Install-Module -Name Terminal-Icons -Repository PSGallery
+
+CONFIGURATION
+---------------------------------------------------------------------------------------------------------------
+Open VSCode $PROFILE (code $PROFILE)
+'''
 if ($host.Name -eq 'ConsoleHost')
 {
     Import-Module PSReadLine
 }
-Install-Module z -AllowClobber
-
-Install-Module -Name Terminal-Icons -Repository PSGallery
-$PROFILE >>
 Import-Module -Name Terminal-Icons
+
+oh-my-posh init pwsh --config 'C:\repositorios\github\OhMyPosh\sysinfo.omp.json' | Invoke-Expression
+'''
