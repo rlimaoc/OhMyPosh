@@ -1,3 +1,6 @@
+Download CaskaydiaCove Nerd Font Mono
+https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip
+
 winget install JanDeDobbeleer.OhMyPosh -s winget
 oh-my-posh init pwsh --config 'C:\repositorios\github\OhMyPosh\sysinfo.omp.json' | Invoke-Expression
 
