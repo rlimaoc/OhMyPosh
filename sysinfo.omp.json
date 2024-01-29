@@ -1,0 +1,386 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "palette": {
+    "color1": "#0388A6",
+    "color2": "#abd907",
+    "color3": "#F2A516",
+    "color4": "#F2620F",
+    "color5": "#F2F2F2"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments":
+      [
+        {
+          "type": "root",
+          "style": "plain",
+          "foreground": "p:color1",
+          "template": "\udb85\udc0b "
+        },
+        {
+          "type": "os",
+          "style": "plain",
+          "foreground": "p:color1",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "properties": {
+            "display_distro_name": true,
+            "windows": "\ue70f"
+          }
+        },
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "p:color1",
+          "template": "{{ if .SSHSession }}\udb82\udcc0 {{ end }}{{ .UserName }}@{{ .HostName }} "
+        },
+        {
+          "type": "sysinfo",
+          "style": "powerline",
+          "foreground": "p:color1",
+          "template": "\udb80\udf5b {{ round .PhysicalPercentUsed .Precision }}% ({{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB) "
+        },
+        {
+          "type": "shell",
+          "style": "plain",
+          "foreground": "p:color2",
+          "template": "\udb80\udd8d {{ .Name }} {{.Version }} "
+        },
+        {
+          "type": "iterm",
+          "style": "plain",
+          "foreground": "p:color2",
+          "template": "{{ .PromptMark }}",
+          "interactive": true
+        },
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "p:color2",
+          "template": "\udb81\udd1b {{ .FormattedMs }} ",
+          "properties": {
+            "always_enabled": true,
+            "style": "austin"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": 
+      [
+        {
+          "type": "root",
+          "style": "plain",
+          "foreground": "#fa997c",
+          "template": "\udb85\udc0b "
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\uf07c {{ .Path }} ",
+          "properties": {
+            "folder_separator_icon": "/",
+            "style": "folder"
+          }
+        },
+        {
+          "type": "angular",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue753 {{ .Full }} "
+        },
+        {
+          "type": "nx",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue753 {{ .Full }} "
+        },
+        {
+          "type": "aws",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\udb83\ude0f {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
+        },
+        {
+          "type": "az",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\uebd8 {{ .EnvironmentName }}"
+        },
+        {
+          "type": "azfunc",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\uf0e7 {{ .Full }} ",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": true
+          }
+        },
+        {
+          "type": "dart",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue64c {{ .Full }} "
+        },
+        {
+          "type": "docker",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\udb82\udc68 {{ .Context }} "
+        },
+        {
+          "type": "dotnet",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue77f {{ .Full }} "
+        },
+        {
+          "type": "flutter",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue28e {{ .Full }} "
+        },
+        {
+          "type": "gcp",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue7b2 {{.Project}}::{{.Account}} "
+        },
+        {
+          "type": "go",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue627 {{ .Full }} "
+        },
+        {
+          "type": "haskell",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue777 {{ .Full }}"
+        },
+        {
+          "type": "java",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue738 {{ .Full }}"
+        },
+        {
+          "type": "julia",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue624 {{ .Full }} "
+        },
+        {
+          "type": "kotlin",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue634 {{ .Full }} "
+        },
+        {
+          "type": "lua",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\udb82\udcb1 {{ .Full }} "
+        },
+        {
+          "type": "node",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue718 {{ .Full }} "
+        },
+        {
+          "type": "npm",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue71e {{ .Full }} "
+        },
+        {
+          "type": "perl",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue769 {{ .Full }}"
+        },
+        {
+          "type": "php",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue608 {{ .Full }} "
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\udb80\udf20 {{ .Full }} "
+        },
+        {
+          "type": "r",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\udb81\udfd4 {{ .Full }} "
+        },
+        {
+          "type": "react",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue7ba {{ .Full }} "
+        },
+        {
+          "type": "ruby",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue739 {{ .Full }}"
+        },
+        {
+          "type": "rust",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\udb85\ude17 {{ .Full }} "
+        },
+        {
+          "type": "swift",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "\ue755 {{ .Full }} "
+        },
+        {
+          "type": "xmake",
+          "style": "plain",
+          "foreground": "p:color3",
+          "template": "xmake v{{ .Full }} "
+        },
+        {
+          "type": "gitversion",
+          "style": "plain",
+          "foreground": "p:color4",
+          "template": "\ue702 {{ .MajorMinorPatch }} "
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:color4",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFEB3B{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
+            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+            "{{ if gt .Behind 0 }}#B388FB{{ end }}"
+          ],
+          "template": "{{ .UpstreamIcon }} {{ .HEAD }} {{ .BranchStatus }}",
+          "properties": {
+            "azure_devops_icon": "\uebe8",
+            "bitbucket_icon": "\udb80\udca8",
+            "branch_ahead_icon": "\u2191",
+            "branch_behind_icon": "\u2193",
+            "branch_gone_icon": "\u2262",
+            "branch_icon": "\udb81\ude2c",
+            "branch_identical_icon": "\u2261",
+            "cherry_pick_icon": "\ue29b",
+            "codecommit_icon": "\uf270",
+            "commit_icon": "\ue729",
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true,
+            "git_icon": "\ue702",
+            "github_icon": "\ue708",
+            "gitlab_icon": "\ue65c",
+            "merge_icon": "\ue727",
+            "no_commits_icon": "[no commits]",
+            "rebase_icon": "\ue728",
+            "revert_icon": "\uf0e2",
+            "tag_icon": "\uf412"
+          }
+        },
+        {
+          "type": "mercurial",
+          "style": "plain",
+          "foreground": "p:color4",
+          "template": "hg {{.Branch}} {{if .LocalCommitNumber}}({{.LocalCommitNumber}}:{{.ChangeSetIDShort}}){{end}}{{range .Bookmarks }} \uf02e {{.}}{{end}}{{range .Tags}} \uf02b {{.}}{{end}}{{if .Working.Changed}} \uf044 {{ .Working.String }}{{ end }}",
+          "properties": {
+            "newprop": "\ueff1"
+          }
+        },
+        {
+          "type": "plastic",
+          "style": "plain",
+          "foreground": "p:color4",
+          "background_templates": [
+            "{{ if .MergePending }}#006060{{ end }}",
+            "{{ if .Changed }}#FF9248{{ end }}",
+            "{{ if and .Changed .Behind }}#ff4500{{ end }}",
+            "{{ if .Behind }}#B388FF{{ end }}"
+          ],
+          "template": "{{ .Selector }}{{ if .Status.Changed }} \uf044 {{ end }}{{ .Status.String }}",
+          "properties": {
+            "branch_max_length": 25,
+            "fetch_status": true,
+            "truncate_symbol": "\u2026"
+          }
+        },
+        {
+          "type": "sapling",
+          "style": "plain",
+          "foreground": "p:color4",
+          "foreground_templates": [
+            "{{ if .Bookmark }}#81f885{{ end }}"
+          ],
+          "properties": {
+            "fetch_status": true
+          }
+        },
+        {
+          "type": "svn",
+          "style": "plain",
+          "foreground": "p:color4",
+          "template": "<b>svn</b> {{.Branch}} r{{.BaseRev}} {{.Working.String}}",
+          "properties": {
+            "fetch_status": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments":
+      [
+        {
+          "type": "root",
+          "style": "plain",
+          "foreground": "#fa997c",
+          "template": "\udb85\udc0b "
+        },
+        {
+          "type": "upgrade",
+          "style": "plain",
+          "foreground": "#fa997c"
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "p:color5",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#F20C0C{{ end }}"
+          ],
+          "template": "{{ if .Error }}\ue231{{ else }}\ue23a{{ end }} ",
+          "properties": {
+            "always_enabled": true
+          }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:color5",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#F20C0C{{ end }}"
+          ],
+          "template": "\uf054_ "
+        }
+      ],
+      "newline": true
+    }
+  ]
+}
